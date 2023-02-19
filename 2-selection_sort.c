@@ -23,7 +23,7 @@ void selection_sort(int *array, size_t size)
 		array[small] = array[i];
 		array[i] = temp;
 		k = 0;
-		while(k < size)
+		while (k < size)
 		{
 			if (array[k] < array[k + 1])
 				sorted = 1;
