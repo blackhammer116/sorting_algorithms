@@ -1,1 +1,1 @@
-team project on sorting algorithms.
+team project on sorting algorithms
