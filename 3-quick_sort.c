@@ -8,9 +8,9 @@
  */
 void quick_sort(int *array, size_t size)
 {
-    int high = size - 1, low = 0;
+	int high = size - 1, low = 0;
 
-    quickSort(array, low, high, size);
+	quickSort(array, low, high, size);
 }
 /**
  * quickSort - function that implements and defines the
@@ -22,17 +22,14 @@ void quick_sort(int *array, size_t size)
  */
 void quickSort(int *arr, int low, int high, size_t size)
 {
-    if (low < high)
-    {
-        /* pi is partitioning index, arr[p] is now
-           at right place */
-        int pi = partition(arr, low, high, size);
+	if (low < high)
+	{
+		int pi = partition(arr, low, high, size);
 
-        /* Separately sort elements before
-         partition and after partition */
-        quickSort(arr, low, pi - 1, size);
-        quickSort(arr, pi + 1, high, size);
-    }
+		quickSort(arr, low, pi - 1, size);
+		quickSort(arr, pi + 1, high, size);
+	}
+
 }
 /**
  * partition - function that defines and uses the Lomuto
@@ -46,25 +43,25 @@ void quickSort(int *arr, int low, int high, size_t size)
  */
 int partition(int *array, int low, int high, size_t size)
 {
-    int pivot = array[high], temp;
-    int i = (low - 1), j;
- 
-    for (j = low; j <= high- 1; j++)
-    {
-        /* If current element is smaller than or
-         equal to pivot*/
-        if (array[j] <= pivot)
-        {
-            i++;    /* increment index of smaller element swap(arr[i], arr[j]); */
-	    temp = array[i];
-	    array[i] = array[j];
-	    array[j] = temp;
-        }
-    }
-    temp = array[i + 1];
-    array[i + 1] = array[high];
-    array[high] = temp;
-    print_array(array, size);
+	int pivot = array[high], temp;
+	int i = (low - 1), j;
 
-    return (i + 1);
+	for (j = low; j <= high - 1; j++)
+	{
+		if (array[j] <= pivot)
+		{
+			i++;
+			temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+	}
+	if (!size)
+		return (1);
+	temp = array[i + 1];
+	array[i + 1] = array[high];
+	array[high] = temp;
+	print_array(array, size);
+
+	return (i + 1);
 }
