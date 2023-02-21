@@ -1,7 +1,10 @@
 #include "sort.h"
 #include <stdio.h>
+
 /**
- *
+ * insertion_sort_list - function that uses insertion sort
+ * algorithm in a doubly linked list
+ * @list: pointer to the head of the linked list
  */
 void insertion_sort_list(listint_t **list)
 {
